@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <lightning:card title="ConForceSo Library">
+        <aura:set attribute="footer">
+            <div>
+                <a href="/lightning/o/Library_Item__c/list?filterName=00B5f0000012kIpEAI">Update Library Items
+                <span class="slds-assistive-text">Accounts</span>
+                </a>
+            </div>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <lightning:listView aura:id="listViewAccounts"
+                                objectApiName="Library_Item__c"
+                                listName="All"
+                                rows="5"
+                                showSearchBar="true"
+                                showActionBar="false"
+                                enableInlineEdit="false"
+                                showRowLevelActions="false"
+                                />
+        </p>
+    </lightning:card>
+</aura:component>

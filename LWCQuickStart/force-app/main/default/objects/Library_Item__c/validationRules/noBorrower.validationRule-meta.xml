@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>noBorrower</fullName>
+    <active>true</active>
+    <description>Prevents user from changing item status to borrowed without including the employee it is borrowed to</description>
+    <errorConditionFormula>AND(  ISCHANGED( Item_Status__c ), ISPICKVAL( Item_Status__c ,  &quot;Borrowed&quot;),  ISBLANK( BorrowedTo__c ) )</errorConditionFormula>
+    <errorDisplayField>BorrowedTo__c</errorDisplayField>
+    <errorMessage>Please Enter the name of the Employee that borrowed the item</errorMessage>
+</ValidationRule>

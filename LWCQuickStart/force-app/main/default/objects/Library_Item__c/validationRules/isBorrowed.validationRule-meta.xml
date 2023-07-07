@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isBorrowed</fullName>
+    <active>true</active>
+    <description>Prevents borrowing an already checked out item</description>
+    <errorConditionFormula>AND(ISPICKVAL( Item_Status__c , &quot;Borrowed&quot;),ISCHANGED(  BorrowedTo__c  ), NOT( ISCHANGED( Item_Status__c ) ) )</errorConditionFormula>
+    <errorDisplayField>BorrowedTo__c</errorDisplayField>
+    <errorMessage>Item cannot be borrowed, it has already been checked out.</errorMessage>
+</ValidationRule>
